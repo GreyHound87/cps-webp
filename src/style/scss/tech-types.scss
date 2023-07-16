@@ -1,0 +1,210 @@
+
+
+.tech-types {
+    box-sizing: border-box;
+    height: 312px;
+    background-color: $sect-bg;
+    border-top: 1px solid $decor-col1;
+    padding-bottom: 38px;
+    transition: all 0.2s ease;
+
+    &__title {
+        display: block;
+        width: 100%;
+        height: 80px;
+        padding: 16px;
+        background: linear-gradient(270deg, #F8F8F8 0%, #FFF 100%);
+        color: $sect-title;
+        font-size: 16px;
+        font-family: TT Lakes;
+        font-weight: normal;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        text-transform: uppercase
+    }
+
+    &__swiper-container {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        height: 211px;
+        overflow: hidden;
+        transition: all 0.2s ease;
+    }    
+
+    &__swiper-container:after {
+        content: '';
+        position: absolute;
+        top: 11px;
+        right: 0;
+        width: 24px;
+        height: 166px;
+        background: linear-gradient(270deg, #F8F8F8 0.04%, rgba(248, 248, 248, 0.00) 100%);
+        z-index: 1;
+    }
+    
+
+    &__swiper-wrapper {
+        box-sizing: border-box;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding-top: 16px;
+        transition: all 0.2s ease;
+    }
+
+    &__swiper-slide {
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+        height: 160px;
+        width: 240px;
+        display: flex;
+        justify-content:flex-start;
+        padding: 16px;
+        border-radius: 6px;
+        border: 1px solid $decor-col2;
+        background-color: $slide-bg;
+        background-image: url("../../img/go.svg");
+        background-position: bottom 14px right 16px;;
+        background-repeat: no-repeat;
+        transition: all 0.3s ease;
+    }
+
+    &__swiper-slide:hover {
+        transform: translateZ(10px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+
+    &__link-btn {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-shrink: 0;
+        color: $slide-txt;
+        font-family: TT Lakes;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+    }
+
+    &__more-btn {
+        display: none;
+    }
+}
+        
+@media (min-width: 768px) {
+
+    .tech-types {
+        min-height: 322px;
+        height: auto;
+        padding-bottom: 34px;
+        max-width: 1440px;
+
+        &__title {
+            height: 56px;
+            padding: 16px 24px;
+        }
+
+        &__swiper-container {
+            height: 208px;
+            
+            &--expanded {
+                height: auto;
+            }   
+        }            
+
+        &__swiper-container:after {
+            display: none;
+        }
+
+        &__swiper-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 24px;
+            padding-right: 0;
+        }
+
+        &__swiper-slide {
+            flex-basis: calc(33.33% - 24px);
+            margin-bottom: 16px;
+            margin-right: 24px;
+            z-index: 1;
+        }            
+
+        &__swiper-slide:nth-child(n+4) {
+            display: none;
+        }
+
+        &__swiper-slide--visible:nth-child(n+4) {
+            display: block;
+            flex-basis: calc(33.33% - 24px);
+            margin-bottom: 16px;
+            margin-right: 24px;
+            z-index: 1;
+        }
+
+        &__more-btn {
+            display: flex;
+            width: 143px;
+            margin-left: 24px;
+            padding-left: 9px;
+        }
+
+        &__more-btn--active::before {
+            transform: rotate(180deg) translateY(50%);
+        }
+    }
+}
+
+@media (min-width: 1426px) {
+
+    .tech-types {
+        min-height: 340px;
+        height: auto;
+
+        &__title {
+            padding: 16px 32px;    
+        }
+
+        &__swiper-wrapper {
+            padding-left: 34px;
+        }
+
+        &__swiper-slide {
+            flex-basis: calc(25% - 32px);
+            margin-bottom: 16px;
+            margin-right: 32px;
+            z-index: 1;
+        }
+
+        &__swiper-slide:nth-child(n+4) {
+            display: block;
+            flex-basis: calc(25% - 32px);
+            margin-bottom: 16px;
+            margin-right: 32px;
+            z-index: 1;
+        }
+
+        &__swiper-slide:nth-child(n+5) {
+            display: none;
+        }
+
+        &__swiper-slide--visible:nth-child(n+5) {
+            display: block;
+            flex-basis: calc(25% - 32px);
+            margin-bottom: 16px;
+            margin-right: 32px;
+            z-index: 1;
+        }
+
+        &__more-btn {
+            margin-left: 32px;
+        }
+
+    }
+}

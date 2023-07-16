@@ -1,0 +1,229 @@
+.close-btn {
+    box-sizing:border-box;
+    display: block;
+    
+
+    &__line:nth-child(1) {
+        display: block;
+        box-sizing: border-box;
+        width: 24px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #FFFFFF;
+        margin: auto;
+        transform: rotate(45deg) translateY(1px);
+        
+      }
+      
+      &__line:nth-child(2) {
+        display: block;
+        box-sizing: border-box;
+        width: 24px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #FFFFFF;
+        margin: auto;
+        transform: rotate(-45deg) translateY(-1px);
+      }
+  }
+
+.feedback {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 320px;
+    height: 676px;
+    background-color: $slide-bg;
+    padding: 80px 16px 16px 16px;
+    box-shadow: -16px 0px 52px 0px rgba(14, 24, 80, 0.20);
+    transition: all 0.1s ease;
+
+    &__title {
+        color: #1B1C21;
+        font-family: TT Lakes;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: -0.6px;
+        position: relative;
+
+        &:before {
+            box-sizing: border-box;
+            position: absolute;
+            content: '';
+            left: -16px;
+            bottom: 0;
+            width: 4px;
+            height: 40px;
+            border-right: 4px solid $decor-col0;
+            border-radius: 0 4px 4px 0; 
+        }
+    }
+
+    &__input {
+        box-sizing:border-box;
+        width: 288px;
+        height: 48px;
+        border-radius: 8px;
+        border: 1px solid $decor-col2;
+        margin-bottom: 16px;
+        color: $input-txt;
+        font-family: TT Lakes;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        padding: 12px 16px;
+    }
+
+    &__mess {
+        box-sizing:border-box;
+        width: 288px;
+        height: 118px;
+        border-radius: 8px;
+        border: 1px solid $decor-col2;
+        color: $input-txt;
+        font-family: TT Lakes;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        padding: 12px 16px;
+        resize: none;
+    }
+
+    &__info {
+        color: $sect-title;
+        font-family: TT Lakes;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px;
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+    &__imp {
+        color: $btns-col;
+    }
+
+    &__link {
+        outline: none;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        color: $btns-col;
+        font-family: TT Lakes;
+        display: inline;
+
+        &:hover {            
+            text-decoration: underline;
+            text-decoration-color: $btns-col;              
+        }
+    }
+
+    &__btn {
+        box-sizing: border-box;
+        width: 136px;
+        height: 32px;
+        border-radius: 16px;
+        background: $btns-col;
+        border: none;
+        padding: 4px 19px;
+        margin: 0;
+        appearance: none;
+        color: $slide-bg;
+        text-align: left;
+        font-family: TT Lakes;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: -0.15px;
+        text-transform: uppercase;
+        transition: filter 0.3s ease;
+        cursor: pointer;
+        background-image: url("../../img/goside.svg");
+        background-position: bottom 4px right 11px;;
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 16px;
+
+    }
+
+    &__btn:hover {
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5)) saturate(1.8);
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 24px;
+        left: 16px;
+    }
+
+
+    
+}
+
+.feedback--hidden {
+    border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
+
+@media (min-width: 1440px) {
+
+    .feedback {
+        width: 440px;
+        height: 940px;
+        padding: 17px 32px 32px 32px;
+        border-left: 1px solid $decor-col1;
+
+    
+        &__title {    
+            &:before {
+                width: 3px;
+                left: -34px;
+                border-radius: 2px;
+            }
+        }
+    
+        &__input {
+            width: 376px;
+        }
+    
+        &__mess {
+            width: 376px;
+        }
+    
+        &__info {
+            margin-top: 12px;
+            margin-bottom: 18px;
+        }
+   
+        &__btn {
+            right: 32px;    
+        }
+    
+        &__close-btn {
+            top: 32px;
+            left: -73px;
+        }
+    
+    
+        
+    }
+    
+
+}
